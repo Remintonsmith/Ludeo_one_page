@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LUDO Presentación</title>
+<meta name="description" content="LUDO, gestor de tareas para estudiantes. Organiza tus tareas, libera tu tiempo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap">
+<link rel="icon" type="image/png" href="assets/img/ludo-simbolo.png">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="tone-light">
+
+<!-- ============================================================
+     LUDO · One page que funciona como presentación
+     Los huecos pendientes están marcados con:
+       · class="ph"       → caja discontinua (imagen, vídeo…), texto en data-label
+       · class="ph-text"  → texto provisional subrayado en discontinuo
+     Al rellenar un hueco, quita la clase ph / ph-text.
+     ============================================================ -->
+
+<!-- Degradado de marca (anillo del dato) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="ludoGrad" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#0F2E52"/>
+      <stop offset=".45" stop-color="#1A7CF5"/>
+      <stop offset=".75" stop-color="#14C8B4"/>
+      <stop offset="1" stop-color="#22E08A"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<div class="blob" aria-hidden="true"></div>
+
+<!-- ===== Barra superior ===== -->
+<header class="topbar">
+  <a class="topbar__logo" href="#portada" aria-label="LUDO, volver a la portada">
+    <img class="topbar__mark" src="assets/img/ludo-simbolo.png" alt="" width="175" height="126">
+    <span>LUDO</span>
+  </a>
+  <div class="ruler" aria-hidden="true">
+    <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    <span class="ruler__fill"></span>
+  </div>
+  <div class="topbar__meta">
+    <span class="counter" aria-live="polite"><b id="counterNow">01</b> / 08</span>
+  </div>
+</header>
+
+<!-- ===== Raíl de tareas: cada slide es una tarea ===== -->
+<nav class="rail" aria-label="Diapositivas">
+  <p class="rail__title">Hoy toca</p>
+  <ol>
+    <li><button type="button" data-goto="0"><span class="check"><svg viewBox="0 0 20 20"><path d="M5 10.5l3.2 3.2L15 6.5"/></svg></span><span class="txt">Portada</span></button></li>
+    <li><button type="button" data-goto="1"><span class="check"><svg viewBox="0 0 20 20"><path d="M5 10.5l3.2 3.2L15 6.5"/></svg></span><span class="txt">Quién sufre</span></button></li>
+    <li><button type="button" data-goto="2"><span class="check"><svg viewBox="0 0 20 20"><path d="M5 10.5l3.2 3.2L15 6.5"/></svg></span><span class="txt">El cliente</span></button></li>
+    <li><button type="button" data-goto="3"><span class="check"><svg viewBox="0 0 20 20"><path d="M5 10.5l3.2 3.2L15 6.5"/></svg></span><span class="txt">Cuándo duele</span></button></li>
+    <li><button type="button" data-goto="4"><span class="check"><svg viewBox="0 0 20 20"><path d="M5 10.5l3.2 3.2L15 6.5"/></svg></span><span class="txt">Qué cambiamos</span></button></li>
+    <li><button type="button" data-goto="5"><span class="check"><svg viewBox="0 0 20 20"><path d="M5 10.5l3.2 3.2L15 6.5"/></svg></span><span class="txt">Cómo funciona</span></button></li>
+    <li><button type="button" data-goto="6"><span class="check"><svg viewBox="0 0 20 20"><path d="M5 10.5l3.2 3.2L15 6.5"/></svg></span><span class="txt">Vídeo</span></button></li>
+    <li><button type="button" data-goto="7"><span class="check"><svg viewBox="0 0 20 20"><path d="M5 10.5l3.2 3.2L15 6.5"/></svg></span><span class="txt">Cierre</span></button></li>
+  </ol>
+  <button class="rail__faq" type="button" data-goto-faq>Backup · FAQ</button>
+</nav>
+
+<main>
+
+  <!-- ========== 01 · PORTADA ========== -->
+  <section class="slide hero" id="portada" data-slide data-tone="light">
+    <div class="wrap hero__grid">
+      <div class="hero__copy">
+        <p class="eyebrow"><span class="check"><svg viewBox="0 0 20 20"><path d="M5 10.5l3.2 3.2L15 6.5"/></svg></span>Gestor de tareas</p>
+        <h1 class="hero__brand" aria-label="LUDO">
+          <span class="hero__mask"><span class="hero__word">LUDO</span></span>
+          <img class="hero__symbol" src="assets/img/ludo-simbolo.png" alt="" width="175" height="126">
+        </h1>
+        <!-- Eslogan: 7 palabras o menos -->
+        <p class="hero__slogan">Organiza tus tareas,<br><span class="grad-text">libera tu tiempo.</span></p>
+        <div class="hero__actions">
+          <a class="btn" href="#problema">Empezar</a>
+        </div>
+      </div>
+
+      <div class="hero__mock">
+        <p class="sticker">Más tiempo<br>para lo<br>importante</p>
+        <div class="mock" role="img" aria-label="Vista de la app LUDO con la lista de tareas y el cronómetro">
+          <div class="mock__bar"><i></i><i></i><i></i></div>
+          <div class="mock__body">
+            <aside class="mock__side">
+              <p class="mock__brand">LUDO</p>
+              <span class="is-on">Tareas</span><span>Hoy</span><span>Proyectos</span><span>Etiquetas</span><span>Configuración</span>
+            </aside>
+            <div class="mock__main">
+              <div class="mock__head">
+                <b>Mis tareas</b>
+                <span class="mock__timer"><span class="dot"></span><span id="mockTimer">25:00</span></span>
+              </div>
+              <ul class="mock__list">
+                <li class="is-done"><span class="check"><svg viewBox="0 0 20 20"><path d="M5 10.5l3.2 3.2L15 6.5"/></svg></span>Planificar la semana</li>
+                <li><span class="check"><svg viewBox="0 0 20 20"><path d="M5 10.5l3.2 3.2L15 6.5"/></svg></span>Revisar propuestas</li>
+                <li><span class="check"><svg viewBox="0 0 20 20"><path d="M5 10.5l3.2 3.2L15 6.5"/></svg></span>Preparar presentación</li>
+                <li><span class="check"><svg viewBox="0 0 20 20"><path d="M5 10.5l3.2 3.2L15 6.5"/></svg></span>Hacer ejercicio</li>
+                <li><span class="check"><svg viewBox="0 0 20 20"><path d="M5 10.5l3.2 3.2L15 6.5"/></svg></span>Leer</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee-band" aria-hidden="true">
+    <div class="marquee">
+      <div class="marquee__track">
+        <span>Organízate</span><b>✓</b><span>Diviértete</span><b>✓</b><span>Avanza</span><b>✓</b>
+        <span>Organízate</span><b>✓</b><span>Diviértete</span><b>✓</b><span>Avanza</span><b>✓</b>
+        <span>Organízate</span><b>✓</b><span>Diviértete</span><b>✓</b><span>Avanza</span><b>✓</b>
+        <span>Organízate</span><b>✓</b><span>Diviértete</span><b>✓</b><span>Avanza</span><b>✓</b>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== 02 · PROBLEMA 1: quién sufre el problema ========== -->
+  <section class="slide" id="problema" data-slide data-tone="dark">
+    <div class="wrap split">
+      <div class="split__text">
+        <p class="eyebrow"><span class="check"><svg viewBox="0 0 20 20"><path d="M5 10.5l3.2 3.2L15 6.5"/></svg></span>02 · Quién sufre el problema</p>
+        <h2 class="h2">Estudiantes que <span class="grad-text">pierden sus rutinas.</span></h2>
+        <p class="lead">Estudiantes universitarios, especialmente de Grado, tienen dificultades para mantener hábitos saludables y rutinas de estudio durante el curso.</p>
+        <p class="lead">Al acercarse los exámenes y las entregas, la carga académica, los cambios de horario y la falta de planificación, motivación y apoyo hacen que abandonen sus rutinas.</p>
+        <p class="source"><b>Estudio científico · 2024</b><br>Nieto-Fernández et al. (2024)</p>
+      </div>
+      <div class="split__visual">
+        <img class="split__img" src="assets/img/estudiante.png" alt="Ilustración de un estudiante agobiado delante del portátil" width="558" height="570">
+        <!-- data-value = porcentaje que se anima -->
+        <div class="ring" data-value="47">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="ring__track" cx="60" cy="60" r="54"/>
+            <circle class="ring__arc" cx="60" cy="60" r="54"/>
+          </svg>
+          <div class="ring__num"><span class="ring__val">47</span><span class="ring__pct">%</span></div>
+          <p class="ring__label">de los estudiantes retrasan tareas académicas</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 03 · PROBLEMA 2: quién es el cliente ========== -->
+  <section class="slide" id="cliente" data-slide data-tone="dark">
+    <div class="wrap persona">
+      <p class="eyebrow"><span class="check"><svg viewBox="0 0 20 20"><path d="M5 10.5l3.2 3.2L15 6.5"/></svg></span>03 · Quién es el cliente</p>
+      <div class="persona__grid">
+        <img class="persona__photo" src="assets/img/guillermo.jpg" alt="Guillermo, 20 años" width="590" height="463">
+        <div class="persona__card">
+          <p class="persona__name">Guillermo, 20</p>
+          <p class="persona__role">Estudiante de Ingeniería</p>
+          <p class="label-mono">Intenta compaginar</p>
+          <ul class="persona__tags">
+            <li>Estudios</li>
+            <li>Gimnasio</li>
+            <li>Vida personal</li>
+            <li>Hobbies</li>
+          </ul>
+        </div>
+      </div>
+      <div class="persona__quote">
+        <p class="label-mono">Frustración principal</p>
+        <blockquote class="fill-text" data-fill>Empieza motivado, pero cuando llegan los exámenes abandona sus hobbies y hábitos.</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 04 · PROBLEMA 3: tres momentos (escena fijada) ========== -->
+  <section class="slide scene" id="momentos" data-slide data-tone="dark" data-steps="3">
+    <div class="wrap scene__inner">
+      <div class="scene__head">
+        <p class="eyebrow"><span class="check"><svg viewBox="0 0 20 20"><path d="M5 10.5l3.2 3.2L15 6.5"/></svg></span>04 · Cuándo sufre el usuario</p>
+        <h2 class="h2">Tres momentos clave</h2>
+      </div>
+      <div class="moments">
+        <ol class="moments__list">
+          <li class="moment is-active" data-step="0">
+            <span class="moment__n">1</span>
+            <p>Varias entregas en una semana</p>
+          </li>
+          <li class="moment" data-step="1">
+            <span class="moment__n">2</span>
+            <p>Pospone las tareas para el último momento</p>
+          </li>
+          <li class="moment" data-step="2">
+            <span class="moment__n">3</span>
+            <p>No le da tiempo a completarlas todas</p>
+          </li>
+        </ol>
+        <div class="moments__stage" aria-hidden="true">
+          <div class="stage-card is-active" data-step="0"><img src="assets/img/momento-1.png" alt=""></div>
+          <div class="stage-card" data-step="1"><img src="assets/img/momento-2.png" alt=""></div>
+          <div class="stage-card" data-step="2"><img src="assets/img/momento-3.png" alt=""></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 05 · SOLUCIÓN 4: qué hacemos diferente ========== -->
+  <section class="slide" id="diferencia" data-slide data-tone="fresh">
+    <div class="wrap diff">
+      <p class="eyebrow"><span class="check"><svg viewBox="0 0 20 20"><path d="M5 10.5l3.2 3.2L15 6.5"/></svg></span>05 · Qué hacemos diferente</p>
+      <h2 class="h2 diff__title">Directos <span class="grad-text">al grano.</span></h2>
+      <div class="versus">
+        <div class="vs-card vs-card--them">
+          <p class="label-mono">Otras apps</p>
+          <p class="vs-card__row"><span class="mark no" role="img" aria-label="No"></span>Se centran más en recopilar información del usuario que en ayudarle.</p>
+        </div>
+        <span class="versus__vs" aria-hidden="true">vs</span>
+        <div class="vs-card vs-card--us">
+          <p class="label-mono">LUDO</p>
+          <p class="vs-card__row"><span class="mark yes" role="img" aria-label="Sí"></span>Busca tu satisfacción y eficiencia ante todo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 06 · SOLUCIÓN 5: cómo funciona (escena fijada) ========== -->
+  <section class="slide scene" id="como-funciona" data-slide data-tone="fresh" data-steps="3">
+    <div class="wrap scene__inner">
+      <div class="scene__head">
+        <p class="eyebrow"><span class="check"><svg viewBox="0 0 20 20"><path d="M5 10.5l3.2 3.2L15 6.5"/></svg></span>06 · Cómo lo resolvemos</p>
+        <h2 class="h2">Regístrate, dale al cronómetro <span class="grad-text">y a la obra.</span></h2>
+        <p class="lead">LUDO busca tu eficiencia y comodidad.</p>
+      </div>
+      <div class="steps">
+        <ol class="steps__list">
+          <li class="step is-active" data-step="0">
+            <span class="step__n">01</span>
+            <h3>Regístrate</h3>
+          </li>
+          <li class="step" data-step="1">
+            <span class="step__n">02</span>
+            <h3>Empieza el cronómetro</h3>
+          </li>
+          <li class="step" data-step="2">
+            <span class="step__n">03</span>
+            <h3>Manos a la obra</h3>
+          </li>
+        </ol>
+        <div class="steps__stage" aria-hidden="true">
+          <div class="stage-card stage-card--step is-active" data-step="0">
+            <svg class="step-icon step-icon--teal" viewBox="0 0 64 64"><circle cx="32" cy="20" r="11"/><path d="M14 56v-6a14 14 0 0 1 9-13M50 56v-6a14 14 0 0 0-9-13"/><path d="M14 56h36"/></svg>
+          </div>
+          <div class="stage-card stage-card--step" data-step="1">
+            <svg class="step-icon step-icon--sky" viewBox="0 0 64 64"><circle cx="32" cy="32" r="24"/><path d="M32 18v14l10 6"/></svg>
+            <span class="stage-timer" id="stepTimer">25:00</span>
+          </div>
+          <div class="stage-card stage-card--step" data-step="2">
+            <img src="assets/img/paso-3.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="urgency">
+        <span class="label-mono">El resultado</span>
+        <p>Más tiempo para lo importante.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 07 · VÍDEO CONCEPTUAL ========== -->
+  <section class="slide" id="video" data-slide data-tone="dark">
+    <div class="wrap video">
+      <p class="eyebrow"><span class="check"><svg viewBox="0 0 20 20"><path d="M5 10.5l3.2 3.2L15 6.5"/></svg></span>07 · Vídeo conceptual</p>
+      <h2 class="h2">Su historia <span class="grad-text">en un minuto.</span></h2>
+      <div class="video__frame">
+        <video id="ludoVideo" playsinline preload="metadata" poster="assets/video/ludo-poster.jpg" src="assets/video/ludo-video.mp4"></video>
+        <button class="video__play" id="videoPlay" type="button" aria-label="Reproducir el vídeo"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 08 · CIERRE ========== -->
+  <section class="slide closing" id="cierre" data-slide data-tone="brand">
+    <div class="ph ph--bg" data-label="Foto de todo el equipo (fondo)"></div>
+    <div class="wrap closing__inner">
+      <p class="eyebrow"><span class="check"><svg viewBox="0 0 20 20"><path d="M5 10.5l3.2 3.2L15 6.5"/></svg></span>08 · Cierre</p>
+      <p class="closing__we">Somos</p>
+      <h2 class="closing__word">LUDO<img class="closing__symbol" src="assets/img/ludo-simbolo.png" alt="" width="175" height="126"></h2>
+      <p class="closing__slogan"><span>Organízate.</span> <span>Diviértete.</span> <span>Avanza.</span></p>
+      <a class="btn btn--light" href="#portada">Empieza a organizarte</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ========== BACKUP · FAQ (no se presenta) ========== -->
+<section class="faq" id="faq" data-tone="light">
+  <div class="wrap">
+    <p class="eyebrow">Backup · Preguntas y respuestas</p>
+    <h2 class="h2">Por si preguntan</h2>
+    <!-- Añadir aquí cada pregunta:
+    <details class="faq__item">
+      <summary>Pregunta<span class="faq__icon" aria-hidden="true"></span></summary>
+      <div class="faq__a"><p>Respuesta.</p></div>
+    </details>
+    -->
+    <div class="faq__list"></div>
+  </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
